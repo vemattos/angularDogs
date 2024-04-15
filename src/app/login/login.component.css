@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fae2a1;
+}
+
+header {
+  background-color: rgba(132, 23, 23, 0.755);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.card {
+  background-color: #fff;
+  max-width: 300px;
+  margin: 20px auto;
+  margin-top: 80px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.log {
+  margin-bottom: 20px;
+}
+
+form label {
+  margin-bottom: 5px;
+  padding-left: 3%;
+}
+
+form input {
+  width: 95%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+
+.sumbit {
+  margin-left: 70%;
+  width: 30%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.opcoes {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.cadastrar {
+  text-align: center;
+  margin-top: 15px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(132, 23, 23, 0.755);
+  color: #fff;
+}
