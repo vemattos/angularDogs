@@ -16,7 +16,7 @@
         <input class="inputClass" type="text" id="username" placeholder="Nome de Usuário" required>
         <input class="inputClass" type="password" id="password" placeholder="Senha" required>
         <div class="options">
-          <input type="checkbox" id="remember">Lembrar-me
+          <input type="checkbox" id="remember" (change)="onChecked()">Lembrar-me
             <a class="frgPss" (click)="forgotPassword()" >Esqueceu a Senha?</a>
         </div>
         <button type="submit">Login</button>
