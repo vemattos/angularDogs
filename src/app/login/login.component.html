@@ -10,23 +10,23 @@
 <header class="header">
     <h1>The Dogs House</h1>
 </header>
-<div class="login-container">
-    <form action="#" method="POST" class="login-form">
+<div class="login">
+    <form action="#" class="login-form" (ngSubmit)="onSubmit()">
         <h2>Login</h2>
-        <input type="text" name="username" placeholder="Nome de Usuário" required>
-        <input type="password" name="password" placeholder="Senha" required>
+        <input class="inputClass" type="text" id="username" placeholder="Nome de Usuário" required>
+        <input class="inputClass" type="password" id="password" placeholder="Senha" required>
         <div class="options">
-            <label><input type="checkbox" name="remember"> Lembrar-me</label>
-            <a href="#">Esqueceu a Senha?</a>
+          <input type="checkbox" id="remember">Lembrar-me
+            <a class="frgPss" (click)="forgotPassword()" >Esqueceu a Senha?</a>
         </div>
         <button type="submit">Login</button>
     </form>
     <div class="signup">
-        <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+        <p>Não tem uma conta? <a (click)="cadastrar()" class="cadastro">Cadastre-se</a></p>
     </div>
 </div>
 <footer class="footer">
-    <p>Matheus Gamba de Oliveira - Strazz Monitoria LGBT</p>
+    <p>Matheus Gamba de Oliveira - Vinícius Estrázulas Mattos</p>
 </footer>
 </body>
 </html>

@@ -1,33 +1,31 @@
+.header {
+  background-color: #BF0C0C;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #FEDD00;
 }
 
-.header {
-  background-color: #BF0C0C;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.header h1 {
+h1 {
   margin: 0;
   color: #fff;
 }
 
-.login-container {
+.login {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 300px;
-  margin-top: 50px;
+  margin-top: 8%;
 }
 
 .login-form {
@@ -36,14 +34,13 @@ body {
   align-items: center;
 }
 
-.login-form h2 {
+h2 {
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.inputClass{
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -58,7 +55,7 @@ body {
   margin-bottom: 15px;
 }
 
-.options label {
+label {
   margin-right: 10px;
 }
 
@@ -81,10 +78,6 @@ button {
   width: 100%;
 }
 
-button:hover {
-  background-color: #8C0202;
-}
-
 .footer {
   background-color: #BF0C0C;
   color: #fff;
@@ -93,4 +86,15 @@ button:hover {
   width: 100%;
   position: fixed;
   bottom: 0;
+}
+
+.frgPss {
+  margin-left: 15px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.cadastro {
+  color: #007bff;
+  cursor: pointer;
 }

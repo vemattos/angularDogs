@@ -1,115 +1,89 @@
-/* styles.css */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffdca7;
-  color: #333;
+  background-color: #fae2a1;
 }
 
 header {
-  background-color: #d63c3c;
+  background-color: rgba(132, 23, 23, 0.755);
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-nav {
+footer{
+  font-size: large;
+  background-color: rgba(132, 23, 23, 0.755);
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: var(--screen-width);
+  height: 50px;
+  flex: none;
+  align-self:stretch;
+  flex-grow: 0;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
+.cardapio{
+  padding-top: 60px;
+  text-align: center;
+}
+.formulario{
+  text-align: center;
+  font-size: x-large;
+}
+.sobre{
+  margin-top: 75px;
   font-size: 20px;
-  transition: color 0.3s ease;
+  text-align: center;
+}
+.usuario{
+  cursor: default;
+  font-size: larger;
+  padding-right: 100px;
+}
+.menu{
+  padding-right: 100px;
+  font-size: x-large;
+  text-align: center;
+  color: white;
 }
 
-nav a:hover {
-  color: #ffdca7;
+
+#lanches-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 
-#form-container {
-  background-color: #fff;
+.lanche-item {
+  width: 400px;
   padding: 40px;
-  margin-top: 80px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-#form-container h2 {
-  margin-top: 0;
-  font-size: 24px;
-}
-
-#form-container label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-#form-container input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  background-color: rgba(132, 23, 23, 0.755);
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: xx-large;
 }
 
-#form-container button {
-  padding: 12px 30px;
-  background-color: #d63c3c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.lanche-item > * {
+  margin-bottom: 20px;
+  font-size: xx-large;
 }
 
-#form-container button:hover {
-  background-color: #b53535;
+.btn-container {
+  display: flex;
+  gap: 10px;
 }
 
-.cardapio {
-  padding-top: 120px;
-  text-align: center;
-  font-size: 36px;
-}
-
-.sobre {
-  padding: 60px 20px;
-  text-align: center;
+.btn-container button {
   font-size: 20px;
-}
-
-.sobre img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-footer {
-  background-color: #d63c3c;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  padding: 10px 20px;
 }
