@@ -1,27 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dogs House - Login</title>
+
+</head>
 <body>
-<header>
-  <h1>Dogs House</h1>
+<header class="header">
+    <h1>The Dogs House</h1>
 </header>
-<div class="card">
-  <h2 class="log">Login</h2>
-  <form id="formularioLogin">
-
-          <label for="username">User:</label>
-          <input type="text" id="username" required>
-
-          <label for="password">Password:</label>
-          <input type="password" id="password" required>
-
-      <button type="button" id="login" class="sumbit" (click)="onSubmit()">Login</button>
-  </form>
-  <!-- <div class="opcoes">
-      <button type="button" id="recover" onclick="recuperarSenha()">Recuperar Senha</button>
-      <input type="checkbox" id="remember">
-      <label for="remember">Lembrar-me</label><br>
-      <button id="cadastrar" class="cadastrar">Cadastrar</button>
-  </div> -->
+<div class="login">
+    <form action="#" class="login-form" (ngSubmit)="onSubmit()">
+        <h2>Login</h2>
+        <input class="inputClass" type="text" id="username" placeholder="Nome de Usuário" required>
+        <input class="inputClass" type="password" id="password" placeholder="Senha" required>
+        <div class="options">
+          <input type="checkbox" id="remember" (change)="onChecked()">Lembrar-me
+            <a class="frgPss" (click)="forgotPassword()" >Esqueceu a Senha?</a>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <div class="signup">
+        <p>Não tem uma conta? <a (click)="cadastrar()" class="cadastro">Cadastre-se</a></p>
+    </div>
 </div>
-</body>
-<footer>
-  <p>Matheus Gamba de Oliveira - Vinicius Estrazulas Mattos</p>
+<footer class="footer">
+    <p>Matheus Gamba de Oliveira - Vinícius Estrázulas Mattos</p>
 </footer>
+</body>
+</html>

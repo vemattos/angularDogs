@@ -1,71 +1,100 @@
+.header {
+  background-color: #BF0C0C;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
 body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FEDD00;
+}
+
+h1 {
   margin: 0;
-  padding: 0;
-  background-color: #fae2a1;
-}
-
-header {
-  background-color: rgba(132, 23, 23, 0.755);
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-.card {
-  background-color: #fff;
-  max-width: 300px;
-  margin: 20px auto;
-  margin-top: 80px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.log {
-  margin-bottom: 20px;
-}
-
-form label {
-  margin-bottom: 5px;
-  padding-left: 3%;
-}
-
-form input {
-  width: 95%;
-  padding: 8px;
-  margin-bottom: 8px;
-  border-radius: 30px;
-  border: 1px solid #ccc;
-}
-
-.sumbit {
-  margin-left: 70%;
-  width: 30%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #333;
   color: #fff;
-  border-radius: 10px;
 }
 
-.opcoes {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.login {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin-top: 8%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.inputClass{
+  width: 100%;
   padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.cadastrar {
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+.signup {
   text-align: center;
-  margin-top: 15px;
 }
 
-footer {
+.signup a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+button {
+  background-color: #BF0C0C;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.footer {
+  background-color: #BF0C0C;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-  background-color: rgba(132, 23, 23, 0.755);
-  color: #fff;
+}
+
+.frgPss {
+  margin-left: 15px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.cadastro {
+  color: #007bff;
+  cursor: pointer;
 }
