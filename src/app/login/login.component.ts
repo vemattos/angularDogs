@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+
   usuario: string | undefined;
   senha: string | undefined;
 
   constructor(private router: Router) {}
 
   onSubmit() {
-    let nomeUsuario = (<HTMLInputElement>document.getElementById('username'))
-      .value;
+    let nomeUsuario = (<HTMLInputElement>document.getElementById('username')).value;
     let senha = (<HTMLInputElement>document.getElementById('password')).value;
 
     if (nomeUsuario.length < 3) {
@@ -35,11 +35,9 @@ export class LoginComponent implements OnInit {
   }
 
   forgotPassword() {
-    let nomeUsuario = (<HTMLInputElement>document.getElementById('username'))
-      .value;
-    let senha = (<HTMLInputElement>document.getElementById('password')).value;
-
-    alert(nomeUsuario + ' sua senha é: ' + senha);
+    // let nomeUsuario = (<HTMLInputElement>document.getElementById('username')).value;
+    // let senha = (<HTMLInputElement>document.getElementById('password')).value;
+    alert('Sua senha é: 123');
   }
 
   cadastrar() {
@@ -47,29 +45,14 @@ export class LoginComponent implements OnInit {
   }
 
   onChecked() {
-    let rememberMe = (<HTMLInputElement>document.getElementById('remember'))
-      .checked;
+    let rememberMe = (<HTMLInputElement>document.getElementById('remember')).checked;
     let check = sessionStorage.getItem('checked');
-    console.log(check);
     let usernameSession = sessionStorage.getItem('username');
     let passwordSession = sessionStorage.getItem('password');
-    console.log(usernameSession);
-    console.log(passwordSession);
-    if (
-      usernameSession !== null &&
-      passwordSession !== null &&
-      rememberMe &&
-      check == 'true'
-    ) {
-      (<HTMLInputElement>document.getElementById('username')).value =
-        usernameSession;
-      (<HTMLInputElement>document.getElementById('password')).value =
-        passwordSession;
-    }
     sessionStorage.setItem('checked', rememberMe ? 'true' : 'false');
+
     if (check) {
-      let nomeUsuario = (<HTMLInputElement>document.getElementById('username'))
-        .value;
+      let nomeUsuario = (<HTMLInputElement>document.getElementById('username')).value;
       let senha = (<HTMLInputElement>document.getElementById('password')).value;
       sessionStorage.setItem('username', nomeUsuario);
       sessionStorage.setItem('password', senha);
@@ -77,13 +60,14 @@ export class LoginComponent implements OnInit {
       sessionStorage.removeItem('username');
       sessionStorage.removeItem('password');
     }
-    if (usernameSession !== null && passwordSession !== null && check == "true") {
-      (<HTMLInputElement>document.getElementById('username')).value =
-        usernameSession;
-      (<HTMLInputElement>document.getElementById('password')).value =
-        passwordSession;
+
+    if (usernameSession !== null && passwordSession !== null && check == 'true'){
+      (<HTMLInputElement>document.getElementById('username')).value = usernameSession;
+      (<HTMLInputElement>document.getElementById('password')).value = passwordSession;
     }
   }
 
-  ngOnInit() {this.onChecked()}
+  ngOnInit() {
+    this.onChecked();
+  }
 }
