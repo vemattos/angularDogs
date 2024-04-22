@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #FEDD00;
-}
-
 header {
   background-color: #BF0C0C;
   color: #fff;
@@ -17,13 +11,10 @@ footer{
   font-size: large;
   background-color: #BF0C0C;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  flex: none;
-  align-self:stretch;
-  flex-grow: 0;
+  height: 40px;
+  padding: 10px;
 }
 
 .cardapio{
@@ -49,39 +40,100 @@ footer{
   font-size: x-large;
   text-align: center;
   color: white;
+  text-decoration: underline;
 }
 
+/*Formulario*/
+
+.custom-card {
+  background-color: #fbe4d9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin-top: 35px;
+  margin-left: 35%;
+}
+
+.custom-form-field {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-left: 63%;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+}
+
+/*Cardapio*/
 
 #lanches-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 40px;
 }
 
 .lanche-item {
-  width: 400px;
-  padding: 40px;
-  background-color: rgba(132, 23, 23, 0.755);
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: xx-large;
+  margin-bottom: 30px;
 }
 
-.lanche-item > * {
-  margin-bottom: 20px;
-  font-size: xx-large;
+.card {
+  width: 100%;
+  background-color: #fbe4d9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 42px;
+}
+
+.imagem {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.nome {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.descricao {
+  font-size: 1.2rem;
+}
+
+.preco, .peso {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
 }
 
 .btn-container {
+  margin-left: 55%;
   display: flex;
   gap: 10px;
-}
-
-.btn-container button {
-  font-size: 20px;
-  padding: 10px 20px;
 }

@@ -1,37 +1,114 @@
 <body>
-    <header>
-        <h1 class="cursor" onclick="resetar()" style="padding-left: 60px;">Dogs House</h1>
-        <nav >
-                <a href="#" class="menu" onclick="scrollToSection('cardapio')">Cardápio</a>
-                <a href="#" class="menu" onclick="scrollToSection('sobre')">Sobre</a>
-        </nav>
-        <span id="username" class="usuario">usuario</span>
-    </header>
+  <header>
+    <h1 class="cursor" (click)="resetar()" style="padding-left: 60px">
+      Dogs House
+    </h1>
+    <nav>
+      <a class="menu" (click)="scrollToSection('cardapio')">Cardápio</a>
+      <a class="menu" (click)="scrollToSection('sobre')">Sobre</a>
+    </nav>
+    <span id="username" class="usuario">usuario</span>
+  </header>
 
-    <div id="form-container" class="formulario">
-        <h2>Adicionar Lanche</h2>
-        <form id="lanches-form">
-            <label for="nome">Nome do Lanche:</label><br>
-            <input type="text" id="nome"><br>
-            <label for="descricao">Descrição:</label><br>
-            <input id="descricao"><br>
-            <label for="preco">Preço:</label><br>
-            <input type="text" id="preco"><br>
-            <button type="submit">Adicionar Lanche</button>
-        </form>
-    </div>
+  <div class="custom-card">
+    <div class="custom-card-content">
+      <h2 class="custom-card-title">Adicionar Lanche</h2>
+      <form [formGroup]="formularioLanche" (ngSubmit)="adicionarLanche()">
+        <div class="custom-form-field">
+          <label for="nome">Nome do Lanche:</label><br />
+          <input type="text" id="nome" name="nome" formControlName="nome" />
+          <div *ngIf="formularioLanche.controls['nome'].errors && (formularioLanche.controls['nome'].dirty || formularioLanche.controls['nome'].touched)">
+            <div *ngIf="formularioLanche.controls['nome'].errors['required']" style="color: red;">
+              O nome é obrigatório.
+            </div>
+            <div *ngIf="formularioLanche.controls['nome'].errors['minlength']" style="color: red;">
+              O nome deve ter pelo menos 3 caracteres.
+            </div>
+          </div>
+        </div>
 
-    <h1 id="cardapio" class="cardapio">Cardápio de Lanches</h1>
-    <div id="lanches-container">
-        <ul id="lanches-list">
-            <!--Lanches-->
-        </ul>
-    </div>
+        <div class="custom-form-field">
+          <label for="descricao">Descrição:</label><br />
+          <input type="text" id="descricao" name="descricao" formControlName="descricao" />
+          <div *ngIf="formularioLanche.controls['descricao'].errors && (formularioLanche.controls['descricao'].dirty || formularioLanche.controls['descricao'].touched)">
+            <div *ngIf="formularioLanche.controls['descricao'].errors['required']" style="color: red;">
+              A descrição é obrigatória.
+            </div>
+            <div *ngIf="formularioLanche.controls['descricao'].errors['minlength']" style="color: red;">
+              A descrição deve ter pelo menos 5 caracteres.
+            </div>
+          </div>
+        </div>
 
-    <div id="sobre" class="sobre">
-        <h1>Sobre</h1>
-        <p>O site dogs house oferece a maior variedade de dogs, acompanhamentos e bebidas do mercado com os melhores preços!</p>
-        <!--img src="DOGSHOUSE.jpg" alt="dogs house" height="300px" width="300px"-->
+        <div class="custom-form-field">
+          <label for="preco">Preço:</label><br />
+          <input type="text" id="preco" name="preco" formControlName="preco" />
+          <div *ngIf="formularioLanche.controls['preco'].errors && (formularioLanche.controls['preco'].dirty || formularioLanche.controls['preco'].touched)">
+            <div *ngIf="formularioLanche.controls['preco'].errors['required']" style="color: red;">
+              O preço é obrigatório.
+            </div>
+            <div *ngIf="formularioLanche.controls['preco'].errors['pattern']" style="color: red;">
+              Por favor, insira um preço válido (apenas números).
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-form-field">
+          <label for="peso">Peso:</label><br />
+          <input type="text" id="peso" name="peso" formControlName="peso" />
+          <div *ngIf="formularioLanche.controls['peso'].errors && (formularioLanche.controls['peso'].dirty || formularioLanche.controls['peso'].touched)">
+            <div *ngIf="formularioLanche.controls['peso'].errors['required']" style="color: red;">
+              O peso é obrigatório.
+            </div>
+            <div *ngIf="formularioLanche.controls['peso'].errors['pattern']" style="color: red;">
+              Por favor, insira um peso válido (apenas números).
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-form-field">
+          <label for="imagem">Imagem:</label><br />
+          <input type="text" id="imagem" name="imagem" formControlName="imagem" />
+          <div *ngIf="formularioLanche.controls['imagem'].errors && (formularioLanche.controls['imagem'].dirty || formularioLanche.controls['imagem'].touched)">
+            <div *ngIf="formularioLanche.controls['imagem'].errors['required']" style="color: red;">
+              A URL da imagem é obrigatória.
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="custom-btn">Adicionar Lanche</button>
+      </form>
     </div>
-    <footer>Vinícius Estrázulas Mattos - Matheus Gamba de Oliveira</footer>
+  </div>
+
+  <h1 id="cardapio" class="cardapio">Cardápio de Lanches</h1>
+  <div id="lanches-list">
+    <div *ngFor="let lanche of lanches" class="lanche-item">
+      <div class="card">
+        <div>
+          <img src="{{ lanche.imagem }}" class="imagem" alt="lanche">
+        </div>
+        <div class="card-content">
+          <h3 class="nome">{{ lanche.nome }}</h3>
+          <p class="descricao">{{ lanche.descricao }}</p>
+          <p class="preco">Preço: {{ lanche.preco }}</p>
+          <p class="peso">Peso: {{ lanche.peso }}</p>
+          <div class="btn-container">
+            <button class="btn" (click)="excluirLanche(lanche.id)">EXCLUIR</button>
+            <button class="btn" (click)="editarLanche(lanche)">EDITAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sobre" class="sobre">
+    <h1>Sobre</h1>
+    <p>
+      O site dogs house oferece a maior variedade de dogs, acompanhamentos e
+      bebidas do mercado com os melhores preços!
+    </p>
+    <img src="https://i.ibb.co/4dYHBbG/DOGSMASTER.jpg" alt="LogoDogs">
+  </div>
+  <footer>Vinícius Estrázulas Mattos - Matheus Gamba de Oliveira</footer>
 </body>
