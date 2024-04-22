@@ -11,6 +11,7 @@ export class DogsComponent implements OnInit {
   formularioLanche!: FormGroup ;
   lanches: any[] = [];
   idCounter: number = 0;
+  showUserOptions : boolean = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -28,6 +29,14 @@ export class DogsComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  toggleUserOptions () {
+    this.showUserOptions = ! this.showUserOptions;
+  }
+
+  userOptions(){
+    alert('Essa funcionalidade está em manutenção.')
   }
 
   inicializarFormulario() {
@@ -74,9 +83,9 @@ export class DogsComponent implements OnInit {
 
     while (!valid) {
       novoNome = prompt('Novo nome:', lanche.nome);
-      if (novoNome === null) return; // Se o usuário cancelar, sai da função
+      if (novoNome === null) return;
 
-      novoNome = novoNome.trim(); // Remove espaços em branco desnecessários
+      novoNome = novoNome.trim();
 
       if (novoNome.length < 3) {
         alert('O nome deve ter pelo menos 3 caracteres.');
@@ -118,7 +127,6 @@ export class DogsComponent implements OnInit {
 
       novaImagem = novaImagem.trim();
 
-      // Validar a URL da imagem (pode ser necessário uma validação mais robusta)
       if (!novaImagem.startsWith('http://') && !novaImagem.startsWith('https://')) {
         alert('A URL da imagem deve começar com "http://" ou "https://".');
         continue;
@@ -127,7 +135,6 @@ export class DogsComponent implements OnInit {
       valid = true;
     }
 
-    // Atualizar os dados do lanche com os novos valores
     lanche.nome = novoNome;
     lanche.descricao = novaDescricao;
     lanche.preco = novoPreco;
