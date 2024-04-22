@@ -7,7 +7,7 @@ header {
   align-items: center;
 }
 
-footer{
+footer {
   font-size: large;
   background-color: #BF0C0C;
   display: flex;
@@ -17,33 +17,69 @@ footer{
   padding: 10px;
 }
 
-.cardapio{
+.cardapio {
   padding-top: 60px;
   text-align: center;
 }
-.formulario{
+
+.formulario {
   text-align: center;
   font-size: x-large;
 }
-.sobre{
+
+.sobre {
   margin-top: 75px;
   font-size: 20px;
   text-align: center;
 }
-.usuario{
+
+.usuario-container {
+  position: relative;
+}
+
+.user-options {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.user-options ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-options ul li {
+  padding: 8px 16px;
+}
+
+.user-options ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.user-options ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+.usuario {
   cursor: default;
   font-size: larger;
   padding-right: 100px;
 }
-.menu{
+
+.menu {
   padding-right: 100px;
   font-size: x-large;
   text-align: center;
   color: white;
   text-decoration: underline;
 }
-
-/*Formulario*/
 
 .custom-card {
   background-color: #fbe4d9;
@@ -78,8 +114,6 @@ input {
 .custom-btn:hover {
   background-color: #0056b3;
 }
-
-/*Cardapio*/
 
 #lanches-list {
   display: flex;
@@ -119,7 +153,8 @@ input {
   font-size: 1.2rem;
 }
 
-.preco, .peso {
+.preco,
+.peso {
   font-size: 1.1rem;
   margin-bottom: 10px;
 }

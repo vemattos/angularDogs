@@ -11,6 +11,7 @@ export class DogsComponent implements OnInit {
   formularioLanche!: FormGroup ;
   lanches: any[] = [];
   idCounter: number = 0;
+  showUserOptions : boolean = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -28,6 +29,14 @@ export class DogsComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  toggleUserOptions () {
+    this.showUserOptions = ! this.showUserOptions;
+  }
+
+  userOptions(){
+    alert('Essa funcionalidade está em manutenção.')
   }
 
   inicializarFormulario() {

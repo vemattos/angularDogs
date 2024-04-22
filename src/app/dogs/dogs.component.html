@@ -1,15 +1,21 @@
-<body>
-  <header>
-    <h1 class="cursor" (click)="resetar()" style="padding-left: 60px">
-      Dogs House
-    </h1>
-    <nav>
-      <a class="menu" (click)="scrollToSection('cardapio')">Cardápio</a>
-      <a class="menu" (click)="scrollToSection('sobre')">Sobre</a>
-    </nav>
+<header>
+  <h1 class="cursor" (click)="resetar()" style="padding-left: 60px">
+    Dogs House
+  </h1>
+  <nav>
+    <a class="menu" (click)="scrollToSection('cardapio')">Cardápio</a>
+    <a class="menu" (click)="scrollToSection('sobre')">Sobre</a>
+  </nav>
+  <div class="usuario-container" (click)="toggleUserOptions()">
     <span id="username" class="usuario">usuario</span>
-  </header>
-
+    <div class="user-options" *ngIf="showUserOptions">
+      <ul>
+        <li><a (click)="userOptions()">Minha Conta</a></li>
+        <li><a (click)="userOptions()">Configurações</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
   <div class="custom-card">
     <div class="custom-card-content">
       <h2 class="custom-card-title">Adicionar Lanche</h2>
@@ -111,4 +117,3 @@
     <img src="https://i.ibb.co/4dYHBbG/DOGSMASTER.jpg" alt="LogoDogs">
   </div>
   <footer>Vinícius Estrázulas Mattos - Matheus Gamba de Oliveira</footer>
-</body>
