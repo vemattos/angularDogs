@@ -35,8 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   forgotPassword() {
-    // let nomeUsuario = (<HTMLInputElement>document.getElementById('username')).value;
-    // let senha = (<HTMLInputElement>document.getElementById('password')).value;
     alert('Sua senha é: 123');
   }
 

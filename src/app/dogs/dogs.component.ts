@@ -85,8 +85,6 @@ export class DogsComponent implements OnInit {
       novoNome = prompt('Novo nome:', lanche.nome);
       if (novoNome === null) return;
 
-      novoNome = novoNome.trim();
-
       if (novoNome.length < 3) {
         alert('O nome deve ter pelo menos 3 caracteres.');
         continue;
@@ -94,8 +92,6 @@ export class DogsComponent implements OnInit {
 
       novaDescricao = prompt('Nova descrição:', lanche.descricao);
       if (novaDescricao === null) return;
-
-      novaDescricao = novaDescricao.trim();
 
       if (novaDescricao.length < 5) {
         alert('A descrição deve ter pelo menos 5 caracteres.');
@@ -105,8 +101,6 @@ export class DogsComponent implements OnInit {
       novoPreco = prompt('Novo preço:', lanche.preco);
       if (novoPreco === null) return;
 
-      novoPreco = novoPreco.trim();
-
       if (isNaN(parseFloat(novoPreco))) {
         alert('O preço deve ser um número.');
         continue;
@@ -115,8 +109,6 @@ export class DogsComponent implements OnInit {
       novoPeso = prompt('Novo peso:', lanche.peso);
       if (novoPeso === null) return;
 
-      novoPeso = novoPeso.trim();
-
       if (isNaN(parseFloat(novoPeso))) {
         alert('O peso deve ser um número.');
         continue;
@@ -124,13 +116,6 @@ export class DogsComponent implements OnInit {
 
       novaImagem = prompt('Nova URL da imagem:', lanche.imagem);
       if (novaImagem === null) return;
-
-      novaImagem = novaImagem.trim();
-
-      if (!novaImagem.startsWith('http://') && !novaImagem.startsWith('https://')) {
-        alert('A URL da imagem deve começar com "http://" ou "https://".');
-        continue;
-      }
 
       valid = true;
     }
