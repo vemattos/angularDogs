@@ -97,8 +97,8 @@
         <div class="card-content">
           <h3 class="nome">{{ lanche.nome }}</h3>
           <p class="descricao">{{ lanche.descricao }}</p>
-          <p class="preco">Preço: {{ lanche.preco }}</p>
-          <p class="peso">Peso: {{ lanche.peso }}</p>
+          <p class="preco">R$: {{ lanche.preco }}</p>
+          <p class="peso">Peso(em gramas): {{ lanche.peso }}</p>
           <div class="btn-container">
             <button class="btn" (click)="excluirLanche(lanche.id)">EXCLUIR</button>
             <button class="btn" (click)="editarLanche(lanche)">EDITAR</button>
